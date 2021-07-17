@@ -16,5 +16,5 @@ Projeyi cloneladıktan sonra visual stuio code programında açınız
 
 ```
 npm install
-npm start
+npm run serve
  ```
