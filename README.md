@@ -1,11 +1,11 @@
-# week-3-vue-dilan-dogan
-Week3 vuejs homework
+# week-4-vue-dilan-dogan
+Week4 vuejs homework
 
 ## İnstallation
 
 Öncelikle projeyi clonelayın
 ```
-git clone https://github.com/Trendyol-Front-End-Bootcamp/week-3-vue-dilan-dogan.git
+git clone https://github.com/Trendyol-Front-End-Bootcamp/week-4-vue-dilan-dogan.git
 ```
 
 
