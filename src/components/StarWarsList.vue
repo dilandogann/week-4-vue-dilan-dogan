@@ -17,7 +17,7 @@
 <script>
 import Card from "./Card.vue";
 import SearchFilter from "./SearchFilter.vue";
-import {fetchStarwarsData} from "../services/fetchStarwarsData"
+import {fetchStarshipData} from "../services/fetchStarshipData"
 
 export default {
   name: "StarWarsList",
@@ -33,7 +33,9 @@ export default {
   },
   methods: {
     async getItems(event) {
-      this.items=await fetchStarwarsData(event);
+      const items=await fetchStarshipData(event);
+      console.log(items)
+      this.items=items.results;
     },
   },
 };
