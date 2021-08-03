@@ -70,7 +70,6 @@ export default {
   methods: {
     getState: function () {
       this.starship = this.$store.state.starship;
-      console.log(this.starship);
     },
     goBack() {
       this.$router.back();
