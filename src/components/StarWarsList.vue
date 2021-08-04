@@ -34,7 +34,6 @@ export default {
   methods: {
     async getItems(event) {
       const items=await fetchStarshipData(event);
-      console.log(items)
       this.items=items.results;
     },
   },
