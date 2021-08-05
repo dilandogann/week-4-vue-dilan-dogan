@@ -5,7 +5,7 @@ export const fetchStarshipData = async (searchText) => {
   .get("https://swapi.dev/api/starships/", {
     params: searchText ? { search: searchText } : {},
   })
-  .then((response) => {return response.data});
+  .then((response) => {return response.data}).catch(err => 'Error occured');
 
   return resultData;
 }

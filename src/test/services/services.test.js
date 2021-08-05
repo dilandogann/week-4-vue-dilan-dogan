@@ -49,4 +49,50 @@ describe("Service tests", () => {
       }
     );
   });
+  it("It should return error message", async () => {
+    axios.get.mockImplementation(() => {
+      return Promise.reject('Error occured');
+    });
+
+    expect(await fetchStarshipData()).toBe('Error occured');
+  });
+});
+
+describe("Get starships with searched text", () => {
+
+  it("it should return all starships with the searched text", async () => {
+    axios.get.mockImplementationOnce(() => {
+      return Promise.resolve({
+        data: {
+          count: 1,
+          next: "next_page",
+          previous: null,
+          results: [{
+            model: "Sentinel-class landing craft",
+            name: "Sentinel-class landing craft",
+            url: "https://swapi.dev/api/starships/2/"
+          }],
+        },
+      });
+    });
+
+    expect(await fetchStarshipData()).toEqual({
+      count: 1,
+      next: "next_page",
+      previous: null,
+      results: [{
+        model: "Sentinel-class landing craft",
+        name: "Sentinel-class landing craft",
+        url: "https://swapi.dev/api/starships/2/"
+      }],
+    });
+  });
+
+  it("It should return error message", async () => {
+    axios.get.mockImplementation(() => {
+      return Promise.reject('Error occured');
+    });
+
+    expect(await fetchStarshipData()).toBe('Error occured');
+  });
 });
