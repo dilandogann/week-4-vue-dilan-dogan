@@ -1,14 +1,14 @@
 <template>
-  <StarWarsList />
+  <StarShipList />
 </template>
 
 <script>
-import StarWarsList from '../components/StarWarsList'
+import StarShipList from '../components/StarShipList'
 
 export default {
   name: "Home",
   components: {
-    StarWarsList,
+    StarShipList,
   },
 };
 </script>

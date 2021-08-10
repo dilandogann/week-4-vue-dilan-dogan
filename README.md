@@ -1,9 +1,14 @@
 # week-4-vue-dilan-dogan
-Week4 vuejs homework
+Week4 vuejs homework - Dilan Doğan
+
+## Try Project Demo
+
+
+[Starships](https://starships-app.netlify.app/)
 
 ## İnstallation
 
-Öncelikle projeyi clonelayın
+First clone the project
 ```
 git clone https://github.com/Trendyol-Front-End-Bootcamp/week-4-vue-dilan-dogan.git
 ```
@@ -11,7 +16,7 @@ git clone https://github.com/Trendyol-Front-End-Bootcamp/week-4-vue-dilan-dogan.
 
 ## Usage
 
-Projeyi cloneladıktan sonra visual stuio code programında açınız
+After cloning the project, open it in visual studio code program
 
 
 ```

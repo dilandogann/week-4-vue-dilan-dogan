@@ -1,6 +1,6 @@
 
 <template>
-  <v-card class="mx-auto my-12 card-border"  max-width="374">
+  <v-card class="mx-auto my-12 card" max-width="374">
     <template slot="progress">
       <v-progress-linear
         color="deep-purple"
@@ -9,27 +9,25 @@
       ></v-progress-linear>
     </template>
     <img src="./../assets/starship.png" width="100%" />
-
-    <v-card-title>{{ starship.name }}</v-card-title>
-
-    <v-card-text>
+    <v-card-title class="card-text">{{ starship.name }}</v-card-title>
+    <v-card-text class="card-text">
       <v-row align="center" class="mx-0">
         <v-rating
           :value="parsRating"
           class="rating"
-          color="amber"
+          color="#fff"
           dense
           half-increments
           readonly
           size="14"
         ></v-rating>
 
-        <div class="grey--text ms-4">
+        <div class="card-text rating-text">
           {{ starship.hyperdrive_rating }}
         </div>
       </v-row>
 
-      <div class="model">{{ starship.model }}</div>
+      <div class="model card-text">{{ starship.model }}</div>
     </v-card-text>
     <v-divider class="mx-4"></v-divider>
 
@@ -75,7 +73,18 @@ export default {
 .rating {
   margin-left: 10px;
 }
-.card-border {
+.card {
   border: 2px solid rgba(192, 0, 250, 0.986);
+  background: black !important;
+}
+.card-text {
+  color: #fff;
+}
+/deep/.mdi-star-outline {
+  color: aliceblue !important;
+}
+.rating-text {
+  margin-left: 8px;
+  margin-top: 1px;
 }
 </style>

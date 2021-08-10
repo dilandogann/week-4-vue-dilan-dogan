@@ -2,8 +2,8 @@
   <v-container>
     <v-row>
       <v-col cols="4"></v-col>
-      <v-col cols="4" >
-          <search-filter @filterResults="getItems"></search-filter>
+      <v-col cols="4">
+        <search-filter @filterResults="getItems"></search-filter>
       </v-col>
     </v-row>
     <v-row>
@@ -17,11 +17,11 @@
 <script>
 import Card from "./Card.vue";
 import SearchFilter from "./SearchFilter.vue";
-import {fetchStarshipData} from "../services/fetchStarshipData"
+import { fetchStarshipData } from "../services/fetchStarshipData";
 
 export default {
-  name: "StarWarsList",
-  components: { Card ,SearchFilter},
+  name: "StarShipList",
+  components: { Card, SearchFilter },
   data() {
     return {
       items: [],
@@ -32,9 +32,10 @@ export default {
     this.getItems();
   },
   methods: {
+    //Get starship data from api
     async getItems(event) {
-      const items=await fetchStarshipData(event);
-      this.items=items.results;
+      const items = await fetchStarshipData(event);
+      this.items = items.results;
     },
   },
 };

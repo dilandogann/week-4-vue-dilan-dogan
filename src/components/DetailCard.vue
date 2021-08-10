@@ -1,4 +1,3 @@
-
 <template>
   <v-container>
     <v-btn class="ma-2" color="orange darken-2" dark @click="goBack">
@@ -13,40 +12,34 @@
         ></v-progress-linear>
       </template>
       <img src="./../assets/starship.png" width="100%" />
-
-      <v-card-title>{{ starship.name }}</v-card-title>
-
-      <v-card-text>
+      <v-card-title class="card-text">{{ starship.name }}</v-card-title>
+      <v-card-text class="card-text">
         <v-row align="center" class="mx-0">
           <v-rating
             :value="parsRating"
             class="rating"
-            color="amber"
+            color="#fff"
             dense
             half-increments
             readonly
             size="14"
           ></v-rating>
-
-          <div class="grey--text ms-4">
+          <div class="card-text ms-4">
             {{ starship.hyperdrive_rating }}
           </div>
         </v-row>
-
         <div class="model">{{ starship.model }}</div>
       </v-card-text>
-      <v-divider class="mx-4"></v-divider>
-      <v-card-text>
-        <p><strong>Passengers: </strong> {{ starship.passengers }}<i></i></p>
+      <v-divider class="mx-4 card-text"></v-divider>
+      <v-card-text class="card-text">
+        <p><strong>Passengers: </strong> {{ starship.passengers }}</p>
         <p>
           <strong>Max Atmosphering Speed: </strong
-          >{{ starship.max_atmosphering_speed }}<i></i>
+          >{{ starship.max_atmosphering_speed }}
         </p>
-        <p><strong>Manufacturer:</strong> {{ starship.manufacturer }}<i></i></p>
-        <p><strong>Crew: </strong>{{ starship.crew }}<i></i></p>
-        <p>
-          <strong>Cargo Capacity: </strong>{{ starship.cargo_capacity }}<i></i>
-        </p>
+        <p><strong>Manufacturer:</strong> {{ starship.manufacturer }}</p>
+        <p><strong>Crew: </strong>{{ starship.crew }}</p>
+        <p><strong>Cargo Capacity: </strong>{{ starship.cargo_capacity }}</p>
       </v-card-text>
     </v-card>
   </v-container>
@@ -62,15 +55,19 @@ export default {
     };
   },
   computed: {
+    //Get selected starship from vuex store
     ...mapGetters(["getStarship"]),
+    //Parse rating value to integer
     parsRating() {
       return parseInt(this.starship.hyperdrive_rating);
     },
   },
   methods: {
+    //Set starship data from vuex store
     getState: function () {
       this.starship = this.$store.state.starship;
     },
+    //Go back to previous component with router
     goBack() {
       this.$router.back();
     },
@@ -97,5 +94,19 @@ export default {
 }
 .card-border {
   border: 2px solid rgba(192, 0, 250, 0.986);
+  background: black !important;
+}
+.card-text {
+  color: #fff !important;
+}
+.rating-text {
+  margin-left: 8px;
+  margin-top: 1px;
+}
+./deep/.theme--light.v-divider {
+  color: aliceblue !important;
+}
+/deep/.mdi-star-outline {
+  color: aliceblue !important;
 }
 </style>
