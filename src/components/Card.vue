@@ -1,6 +1,6 @@
 
 <template>
-  <v-card class="mx-auto my-12" max-width="374">
+  <v-card class="mx-auto my-12 card-border"  max-width="374">
     <template slot="progress">
       <v-progress-linear
         color="deep-purple"
@@ -34,9 +34,7 @@
     <v-divider class="mx-4"></v-divider>
 
     <v-card-actions>
-      <v-btn @click="setMyItem"
-        >See More</v-btn
-      >
+      <v-btn @click="setMyItem">See More</v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -61,7 +59,7 @@ export default {
     ...mapActions(["setItem"]),
     setMyItem() {
       this.$store.dispatch("setItem", this.starship);
-      this.$router.push({ name: 'DetailCard'})
+      this.$router.push({ name: "DetailCard" });
     },
   },
 };
@@ -76,5 +74,8 @@ export default {
 }
 .rating {
   margin-left: 10px;
+}
+.card-border {
+  border: 2px solid rgba(192, 0, 250, 0.986);
 }
 </style>

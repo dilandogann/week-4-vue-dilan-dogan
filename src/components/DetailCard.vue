@@ -4,7 +4,7 @@
     <v-btn class="ma-2" color="orange darken-2" dark @click="goBack">
       <v-icon dark left> mdi-arrow-left </v-icon>Back
     </v-btn>
-    <v-card class="mx-auto my-12 myCard" max-width="374">
+    <v-card class="mx-auto my-12 myCard card-border" max-width="374">
       <template slot="progress">
         <v-progress-linear
           color="deep-purple"
@@ -94,5 +94,8 @@ export default {
 .myCard {
   margin-left: 700px;
   margin-top: 24px;
+}
+.card-border {
+  border: 2px solid rgba(192, 0, 250, 0.986);
 }
 </style>

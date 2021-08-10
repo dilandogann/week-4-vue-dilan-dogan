@@ -23,5 +23,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("https://starwarsblog.starwars.com/wp-content/uploads/2020/04/star-wars-backgrounds-25.jpg");
+  height: 180vh;
+  width: 100vw;
 }
 </style>

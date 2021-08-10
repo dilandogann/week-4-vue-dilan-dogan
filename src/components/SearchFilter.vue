@@ -4,7 +4,7 @@
       <v-text-field
         v-model="searchText"
         class="custom-label-color"
-        label="Search For..."
+        label="Search"
         outlined
         clearable
       ></v-text-field>
@@ -55,5 +55,8 @@ export default {
 }
 .button-margin{
   margin-top: 10px;
+}
+/deep/ .theme--light.v-input input, .theme--light.v-input textarea{
+    color: aliceblue !important;
 }
 </style>
