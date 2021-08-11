@@ -1,9 +1,6 @@
 <template>
   <v-container>
-    <v-btn class="ma-2" color="orange darken-2" dark @click="goBack">
-      <v-icon dark left> mdi-arrow-left </v-icon>Back
-    </v-btn>
-    <v-card class="mx-auto my-12 myCard card-border" max-width="374">
+    <v-card class="mx-auto my-12 card">
       <template slot="progress">
         <v-progress-linear
           color="deep-purple"
@@ -31,49 +28,44 @@
         <div class="model">{{ starship.model }}</div>
       </v-card-text>
       <v-divider class="mx-4 card-text"></v-divider>
-      <v-card-text class="card-text">
-        <p><strong>Passengers: </strong> {{ starship.passengers }}</p>
-        <p>
-          <strong>Max Atmosphering Speed: </strong
-          >{{ starship.max_atmosphering_speed }}
-        </p>
-        <p><strong>Manufacturer:</strong> {{ starship.manufacturer }}</p>
-        <p><strong>Crew: </strong>{{ starship.crew }}</p>
-        <p><strong>Cargo Capacity: </strong>{{ starship.cargo_capacity }}</p>
+      <!-- If its for details show starship details-->
+      <v-card-text class="card-text info-text" v-if="showDetailProperties">
+        <star-ship-detail-values :starship="starship" />
       </v-card-text>
+      <!--Else show see more button -->
+      <v-card-actions v-else>
+        <v-btn @click="emitStarshipToParent">See More</v-btn>
+      </v-card-actions>
     </v-card>
   </v-container>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import StarShipDetailValues from "./StarShipDetailValues.vue";
 export default {
-  name: "DetailCard",
-  data() {
-    return {
-      starship: {},
-    };
+  components: { StarShipDetailValues },
+  name: "StarShipCard",
+  props: {
+    starship: {
+      type: Object,
+      required: true,
+    },
+    showDetailProperties: {
+      type: Boolean,
+      required: true,
+    },
   },
   computed: {
-    //Get selected starship from vuex store
-    ...mapGetters(["getStarship"]),
     //Parse rating value to integer
     parsRating() {
       return parseInt(this.starship.hyperdrive_rating);
     },
   },
+  //Emit selected starship item to parent
   methods: {
-    //Set starship data from vuex store
-    getState: function () {
-      this.starship = this.$store.state.starship;
+    emitStarshipToParent () {
+      this.$emit('setStarship',this.starship)
     },
-    //Go back to previous component with router
-    goBack() {
-      this.$router.back();
-    },
-  },
-  created: function () {
-    this.getState();
   },
 };
 </script>
@@ -88,11 +80,8 @@ export default {
 .rating {
   margin-left: 10px;
 }
-.myCard {
-  margin-left: 700px;
-  margin-top: 24px;
-}
-.card-border {
+.card {
+  max-width: 374px;
   border: 2px solid rgba(192, 0, 250, 0.986);
   background: black !important;
 }
@@ -103,10 +92,18 @@ export default {
   margin-left: 8px;
   margin-top: 1px;
 }
-./deep/.theme--light.v-divider {
+/deep/.theme--light.v-divider {
   color: aliceblue !important;
 }
 /deep/.mdi-star-outline {
   color: aliceblue !important;
+}
+.info-text {
+  font-size: 16px;
+  text-align: left;
+}
+.rating-text {
+  margin-left: 8px;
+  margin-top: 1px;
 }
 </style>

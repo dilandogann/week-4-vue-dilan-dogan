@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 
 import Home from "../views/Home";
-import DetailCard from "../components/DetailCard"
+import DetailStarShipItem from "../components/DetailStarShipItem"
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
@@ -15,9 +15,9 @@ export const router = new VueRouter({
       component: Home
     },
     {
-      path: "/detailCard",
-      name: "DetailCard",
-      component: DetailCard
+      path: "/detailStarShipItem",
+      name: "DetailStarShipItem",
+      component: DetailStarShipItem
     },
   ]
 });

@@ -8,20 +8,20 @@
     </v-row>
     <v-row>
       <v-col v-for="(item, idx) in items" :key="idx" class="list" cols="3">
-        <Card :starship="item" />
+        <list-star-ship-item :starship="item" />
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
-import Card from "./Card.vue";
 import SearchFilter from "./SearchFilter.vue";
 import { fetchStarshipData } from "../services/fetchStarshipData";
+import ListStarShipItem from './ListStarShipItem.vue';
 
 export default {
   name: "StarShipList",
-  components: { Card, SearchFilter },
+  components: { SearchFilter, ListStarShipItem },
   data() {
     return {
       items: [],

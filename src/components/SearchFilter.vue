@@ -8,7 +8,6 @@
         outlined
         clearable
       ></v-text-field>
-
       <v-btn
         class="filterButton button-margin"
         color="#9c27b0"
@@ -45,18 +44,20 @@ export default {
   margin-left: 12px;
   height: 54px;
 }
-.v-btn>.v-btn__content .v-icon {
-    color: aliceblue !important;
-}.button-text{
+.v-btn > .v-btn__content .v-icon {
+  color: aliceblue !important;
+}
+.button-text {
   font-weight: 600;
 }
-.wheat-color{
-  color: wheat
+.wheat-color {
+  color: wheat;
 }
-.button-margin{
+.button-margin {
   margin-top: 10px;
 }
-/deep/ .theme--light.v-input input, .theme--light.v-input textarea{
-    color: aliceblue !important;
+/deep/ .theme--light.v-input input,
+.theme--light.v-input textarea {
+  color: aliceblue !important;
 }
 </style>
