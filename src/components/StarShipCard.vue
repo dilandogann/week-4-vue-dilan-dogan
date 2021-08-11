@@ -34,7 +34,7 @@
       </v-card-text>
       <!--Else show see more button -->
       <v-card-actions v-else>
-        <v-btn @click="emitStarshipToParent">See More</v-btn>
+        <v-btn @click="emitStarshipToParent" class="see-more-button">See More</v-btn>
       </v-card-actions>
     </v-card>
   </v-container>
@@ -105,5 +105,8 @@ export default {
 .rating-text {
   margin-left: 8px;
   margin-top: 1px;
+}
+.see-more-button{
+    font-weight: 700 !important;
 }
 </style>
