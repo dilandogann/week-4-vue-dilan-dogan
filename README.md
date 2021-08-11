@@ -1,5 +1,5 @@
 # week-4-vue-dilan-dogan
-Week4 vuejs homework - Dilan Doğan
+Week4 Vuejs Homework - Dilan Doğan
 
 ## Try Project Demo
 
